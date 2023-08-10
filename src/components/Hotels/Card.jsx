@@ -1,6 +1,7 @@
 import React from "react";
-import HeartButton from "../Button";
+import HeartButton from "../HeartButton";
 import { VscLocation, VscHome, VscStarFull } from "react-icons/vsc";
+import DiscountBar from "../DiscountBar";
 
 const Card = ({ hotel }) => {
   const {
@@ -39,6 +40,10 @@ const Card = ({ hotel }) => {
             src={images[0]}
             alt="Room"
           />
+          <div className="absolute top-3 left-3">
+
+          <DiscountBar props={discount_percent}></DiscountBar>
+          </div>
           <div
             className="
             absolute
@@ -74,7 +79,9 @@ const Card = ({ hotel }) => {
           </div>
           <h3 className="text-center my-5">Checkout Price:</h3>
           <div className="flex items-center gap-2 justify-center">
-            <div className="font-semibold text-center">{red_price.toFixed(0)} BDT</div>
+            <div className="font-semibold text-center">
+              {red_price.toFixed(0)} BDT
+            </div>
             <strike>{black_price}</strike>
           </div>
         </div>
