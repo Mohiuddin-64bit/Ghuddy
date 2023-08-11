@@ -6,10 +6,17 @@ import Hotels from "../Hotels/Hotels";
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-
+  const [active, setActive] = useState(false)
   const handleCategoryClick = (categoryValue) => {
-    setSelectedCategory(categoryValue);
+    if (active && selectedCategory === categoryValue) {
+      setActive(false);
+      setSelectedCategory(null);
+    } else {
+      setActive(true);
+      setSelectedCategory(categoryValue);
+    }
   };
+
   return (
     <div>
       <Container>
@@ -20,7 +27,7 @@ const Categories = () => {
             key={item.label}
             icon={item.iconUrl}
             label={item.label}
-            isSelected={selectedCategory === item.value}
+            isSelected={selectedCategory === item.value }
             onClick={() => handleCategoryClick(item.value)}
           />
           ))}
