@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Container from "../Shared/container";
 import Card from "./Card";
-import Taste from "../Taste";
 
 const Hotels = ({ selectedCategory }) => {
   const [hotels, setHotels] = useState([]);
