@@ -17,7 +17,7 @@ Experience the future of hotel booking with [Project Name]. Begin your journey t
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Challenges](#challenges)
-- [Contributing](#Contributing)
+- [Contributing](#contributing)
 
 ## Features
 
