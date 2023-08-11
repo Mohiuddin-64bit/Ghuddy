@@ -9,11 +9,21 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import axios from "axios";
 import { VscLocation, VscHome, VscStarFull } from "react-icons/vsc";
-import Container from "../Shared/container";
-import DiscountBar from "../Buttons/DiscountBar";
-import HeartButton from "../Buttons/HeartButton";
+import Container from "./Shared/container";
+import DiscountBar from "./Buttons/DiscountBar";
+import HeartButton from "./Buttons/HeartButton";
 
-const Card = ({ hotels }) => {
+const Taste = ({hotels}) => {
+  // const [hotels, setHotels] = useState([]);
+  // useEffect(() => {
+  //   axios("https://dev.ghuddy.link/api/v1/open/hotels")
+  //     .then((res) => {
+  //       setHotels(res.data.esHotelCardList);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
   return (
     <Container>
       <Swiper
@@ -28,7 +38,7 @@ const Card = ({ hotels }) => {
         {hotels.map((hotel) => (
           <SwiperSlide key={hotel.id}>
             <div className=" w-full cursor-pointer group">
-              <div className="flex flex-col bg-[#ffffff] rounded-xl h-[600px] w-full">
+              <div className="flex flex-col bg-[#ffffff] rounded-xl h-full w-full">
                 <div
                   className="
             aspect-square 
@@ -81,14 +91,12 @@ const Card = ({ hotels }) => {
                       <VscHome />
                     </div>
                     <div className=" text-sm">
-                      {hotel.display_facilities
-                        .slice(0, 5)
-                        .map((facility, index) => (
-                          <React.Fragment key={facility.name}>
-                            {facility.name}
-                            {index < 4 ? ", " : ""}
-                          </React.Fragment>
-                        ))}
+                      {hotel.display_facilities.slice(0, 5).map((facility, index) => (
+                        <React.Fragment key={facility.name}>
+                          {facility.name}
+                          {index < 4 ? ", " : ""}
+                        </React.Fragment>
+                      ))}
                     </div>
                   </div>
                   <h3 className="text-center my-2">Checkout Price:</h3>
@@ -108,4 +116,4 @@ const Card = ({ hotels }) => {
   );
 };
 
-export default Card;
+export default Taste;
