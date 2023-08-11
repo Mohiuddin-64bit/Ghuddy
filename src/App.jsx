@@ -1,6 +1,6 @@
 
 import Navbar from './components/Navbar';
-import Categories from './components/Categories';
+import Categories from './components/Categories/Categories';
 import Hotels from './components/Hotels/Hotels';
 
 const App = () => {

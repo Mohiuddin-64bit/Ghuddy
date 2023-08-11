@@ -1,7 +1,7 @@
 import React from "react";
-import HeartButton from "../HeartButton";
+import HeartButton from "../Buttons/HeartButton";
 import { VscLocation, VscHome, VscStarFull } from "react-icons/vsc";
-import DiscountBar from "../DiscountBar";
+import DiscountBar from "../Buttons/DiscountBar";
 
 const Card = ({ hotel }) => {
   const {
@@ -18,7 +18,7 @@ const Card = ({ hotel }) => {
   } = hotel;
 
   return (
-    <div className="col-span-1 w-full cursor-pointer group">
+    <div className=" w-full cursor-pointer group">
       <div className="flex flex-col bg-[#ffffff] rounded-xl h-full w-full">
         <div
           className="
@@ -41,8 +41,7 @@ const Card = ({ hotel }) => {
             alt="Room"
           />
           <div className="absolute top-3 left-3">
-
-          <DiscountBar props={discount_percent}></DiscountBar>
+            <DiscountBar props={discount_percent}></DiscountBar>
           </div>
           <div
             className="
@@ -62,13 +61,15 @@ const Card = ({ hotel }) => {
               {class_rating}
             </div>
           </div>
-          <div className="pt-2 flex text-sm items-center">
+          <div className="pt-2 flex gap-1 text-sm items-center">
             <VscLocation></VscLocation>
             {short_address.slice(0, 40)}
           </div>
-          <div className="flex">
-            <VscHome />
-            <div className="pt-2 text-sm">
+          <div className="flex pt-2 gap-1">
+            <div>
+              <VscHome />
+            </div>
+            <div className=" text-sm">
               {display_facilities.slice(0, 5).map((facility, index) => (
                 <React.Fragment key={facility.name}>
                   {facility.name}
@@ -77,7 +78,7 @@ const Card = ({ hotel }) => {
               ))}
             </div>
           </div>
-          <h3 className="text-center my-5">Checkout Price:</h3>
+          <h3 className="text-center my-2">Checkout Price:</h3>
           <div className="flex items-center gap-2 justify-center">
             <div className="font-semibold text-center">
               {red_price.toFixed(0)} BDT
